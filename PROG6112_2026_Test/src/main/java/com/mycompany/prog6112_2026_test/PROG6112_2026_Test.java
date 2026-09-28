@@ -4,93 +4,72 @@ public class PROG6112_2026_Test {
 
     public static void main(String[] args) {
         
-        // =========================================================================
-        // ARRAY DECLARATION & POPULATION 
-        // =========================================================================
-        
-        // Create a single-dimensional array of Strings to store our three city names
+        // 1D array for the cities mentioned in the test paper
         String[] cities = {"CAPE TOWN", "PORT ELIZABETH", "PRETORIA"};
         
-        // Create a two-dimensional array of integers to hold the exact sales numbers from the test paper
-        // Row 0 = Cape Town, Row 1 = Port Elizabeth, Row 2 = Pretoria
+        // 2D array to hold all the console numbers from the table
+        // Rows match the cities array order (Cape Town, PE, Pretoria)
         int[][] salesMatrix = {
-            {1000, 2000, 3000}, // Sales for PS5, XBOX, and SWITCH in Cape Town
-            {2000, 3000, 4000}, // Sales for PS5, XBOX, and SWITCH in Port Elizabeth
-            {1500, 1100, 1200}  // Sales for PS5, XBOX, and SWITCH in Pretoria
+            {1000, 2000, 3000}, // cape town data
+            {2000, 3000, 4000}, // port elizabeth data
+            {1500, 1100, 1200}  // pretoria data
         };
 
-        
-        // =========================================================================
-        // PRINTING ROWS AND COLUMNS IN THE REPORT 
-        // =========================================================================
-        
-        // Print the top design borders and the main header exactly as requested
+        // Printing the top of the report header
         System.out.println("-----------------------------------------------------------------");
         System.out.println("GAMING CONSOLE REPORT");
         System.out.println("-----------------------------------------------------------------");
         
-        // Print the column headers for our console types using tab spacing (\t) to keep things clean
+        // print columns headers using tabs for alignment
         System.out.println("\t\t\tPS5\t\tXBOX\t\tSWITCH");
         
-        // Loop through each city row to display the city name and its matching sales figures
+        // outer loop to go through each city row
         for (int i = 0; i < cities.length; i++) {
             
-            // Print the city name, aligned neatly with tabs
+            // prints the city name first before the numbers
             System.out.print(cities[i] + "\t\t");
             
-            // Loop through the columns of the current city row to pull out each console's sales number
+            // inner loop to print out the console sales for that city
             for (int j = 0; j < salesMatrix[i].length; j++) {
                 System.out.print(salesMatrix[i][j] + "\t\t");
             }
             
-            // Move down to a brand new line after finishing the current city's row of data
+            // break to next line after completing the row
             System.out.println();
         }
         System.out.println("-----------------------------------------------------------------");
 
-        
-        // =========================================================================
-        // PRINTING DATA AND CALCULATION OF TOTALS (6 Marks)
-        // =========================================================================
-        
-        // Print the section header for the upcoming totals
+        // Heading for the second part of the report
         System.out.println("\nCONSOLE SALES TOTALS FOR EACH CITY");
         System.out.println("-----------------------------------------------------------------");
         
-        // Variables to help track which city has the highest overall sales volume
+        // variables to keep track of the highest sales and the city name
         int maxSales = 0;
         String topCity = "";
 
-        // Loop through each city once again to calculate and show its total combined volume
+        // looping again to calculate totals per city
         for (int i = 0; i < cities.length; i++) {
             
-            // Start a running total for the current city at 0
+            // resetting the sum for each city back to 0
             int currentCityTotal = 0;
             
-            // Add up the values of all three consoles for this specific city row
+            // inner loop adding up all console figures in this row
             for (int j = 0; j < salesMatrix[i].length; j++) {
                 currentCityTotal += salesMatrix[i][j];
             }
             
-            // Output the calculated total alongside the city's name
+            // printing out the calculated total for this city
             System.out.println(cities[i] + "\t\t" + currentCityTotal);
 
-            
-            // =========================================================================
-            // DETERMINE AND DISPLAY THE CITY WITH MOST SALES (4 Marks)
-            // =========================================================================
-            
-            // Check if the current city's total beats the highest total we have seen so far
+            // checking if this city's total is the new highest
             if (currentCityTotal > maxSales) {
-                // If it is higher, update our maximum tracker to this new value
-                maxSales = currentCityTotal;
-                // Save the name of this city as our current frontrunner
-                topCity = cities[i];
+                maxSales = currentCityTotal; // save the highest number
+                topCity = cities[i]; // save the city name
             }
         }
         System.out.println("-----------------------------------------------------------------");
         
-        // Print the final result displaying the top-selling city explicitly
+        // printing the final answer showing the winning city
         System.out.println("\nCITY WITH THE MOST SALES: " + topCity);
         System.out.println("-----------------------------------------------------------------");
     }
