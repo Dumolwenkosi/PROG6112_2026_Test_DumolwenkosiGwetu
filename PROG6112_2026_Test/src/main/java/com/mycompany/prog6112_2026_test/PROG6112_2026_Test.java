@@ -5,7 +5,7 @@ public class PROG6112_2026_Test {
     public static void main(String[] args) {
         
         // =========================================================================
-        // CHUNK 1: ARRAY DECLARATION & POPULATION (6 Marks)
+        // ARRAY DECLARATION & POPULATION 
         // =========================================================================
         
         // Create a single-dimensional array of Strings to store our three city names
@@ -21,7 +21,7 @@ public class PROG6112_2026_Test {
 
         
         // =========================================================================
-        // CHUNK 2: PRINTING ROWS AND COLUMNS IN THE REPORT (4 Marks)
+        // PRINTING ROWS AND COLUMNS IN THE REPORT 
         // =========================================================================
         
         // Print the top design borders and the main header exactly as requested
@@ -50,7 +50,7 @@ public class PROG6112_2026_Test {
 
         
         // =========================================================================
-        // CHUNK 3: PRINTING DATA AND CALCULATION OF TOTALS (6 Marks)
+        // PRINTING DATA AND CALCULATION OF TOTALS (6 Marks)
         // =========================================================================
         
         // Print the section header for the upcoming totals
@@ -77,7 +77,7 @@ public class PROG6112_2026_Test {
 
             
             // =========================================================================
-            // CHUNK 4: DETERMINE AND DISPLAY THE CITY WITH MOST SALES (4 Marks)
+            // DETERMINE AND DISPLAY THE CITY WITH MOST SALES (4 Marks)
             // =========================================================================
             
             // Check if the current city's total beats the highest total we have seen so far
